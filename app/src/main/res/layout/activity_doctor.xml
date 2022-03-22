@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.doctorActivity">
+
+    <include
+        android:id="@+id/include6"
+        layout="@layout/user_toolbar" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="618dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include6"
+        tools:layout_editor_absoluteX="1dp">
+
+        <Button
+            android:id="@+id/buttonAdaugaMedicamenteDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="adauga medicamente" />
+
+        <Button
+            android:id="@+id/buttonAdaugaPacientDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="adauga pacient" />
+
+        <Button
+            android:id="@+id/buttonTrimiteRetetaDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="trimite reteta" />
+
+        <Button
+            android:id="@+id/buttonDetaliiContDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="detalii cont" />
+
+        <Button
+            android:id="@+id/LogOutDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log out" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

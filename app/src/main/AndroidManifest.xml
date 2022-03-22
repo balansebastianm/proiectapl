@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proiect">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +13,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proiect">
         <activity
-            android:name=".registerActivity"
+            android:name=".ui.activities.meniuUser.istoricComenzi"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.meniuUser.orderMenu"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.retetaNoua"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.addPatient"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.addStock"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.interfaceAdd"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuUser.orderDrugs"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.accountDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.addDrugs"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.doctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.userActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".ui.activities.registerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

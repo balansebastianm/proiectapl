@@ -8,6 +8,15 @@ public class User {
     String username;
     String password;
     int doctor;
+    int assignedDoctor;
+
+    public int getAssignedDoctor() {
+        return assignedDoctor;
+    }
+
+    public void setAssignedDoctor(int assignedDoctor) {
+        this.assignedDoctor = assignedDoctor;
+    }
 
     public int getDoctor() {
         return doctor;
