@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/holo_blue_light">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bun venit!"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_baseline_menu_24" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/menuButton"
+            android:src="@drawable/ic_baseline_message_24"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/chatButton"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -10,10 +10,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proiect">
         <activity
-            android:name=".registerActivity"
+            android:name=".ui.activities.meniuUser.orderDrugs"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.meniuUser.listDrugs"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.accountDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.listPatients"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.meniuDoctor.addDrugs"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.doctorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.userActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".ui.activities.registerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

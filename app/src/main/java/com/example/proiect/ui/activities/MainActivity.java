@@ -1,14 +1,19 @@
-package com.example.proiect;
+package com.example.proiect.ui.activities;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.proiect.R;
 
 import sql.DatabaseHelper;
 
@@ -21,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         Button registerButton = (Button)findViewById(R.id.buttonRegisterLogin);
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
 
             if(databaseHelper.checkUserLogin(etUsername.getText().toString().trim(), etPassword.getText().toString().trim())){
                 System.out.println("SUCCES");
+                if(databaseHelper.isDoctor(etUsername.getText().toString().trim(), etPassword.getText().toString().trim())){
+                    Intent activity2Intent = new Intent(getApplicationContext(), doctorActivity.class);
+                    startActivity(activity2Intent);
+                }
+                else{
+                    Intent activity2Intent = new Intent(getApplicationContext(), userActivity.class);
+                    startActivity(activity2Intent);
+                }
             }
             else{
                 System.out.println("Erorare");

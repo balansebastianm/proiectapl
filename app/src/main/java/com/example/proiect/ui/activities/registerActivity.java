@@ -1,36 +1,24 @@
-package com.example.proiect;
+package com.example.proiect.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.database.sqlite.*;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import org.w3c.dom.Text;
-
-import java.io.Console;
+import com.example.proiect.R;
 
 import sql.DatabaseHelper;
 import sql.User;
 
 public class registerActivity extends AppCompatActivity {
     User user = new User();
-    TextView tvRegistered, tvRegistered2;
+    TextView tvRegistered;
     String strUsername, strPassword,  strEmail, strPrenume,  strNume;
     EditText etNume, etPrenume, etEmail, etUsername, etPassword;
 
@@ -39,28 +27,24 @@ public class registerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Button register = (Button)findViewById(R.id.buttonRegisterRegister);
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                init();
-                checkInput();
-            }
+        Button register = findViewById(R.id.buttonRegisterRegister);
+        register.setOnClickListener(view -> {
+            init();
+            checkInput();
         });
 
     }
     private final AppCompatActivity activity = registerActivity.this;
     DatabaseHelper databaseHelper = new DatabaseHelper(activity);
-    private NestedScrollView nestedScrollView;
 
 
 public void init(){
-     tvRegistered = (TextView) findViewById(R.id.textViewRegister);
-     etNume = (EditText) findViewById(R.id.editTextNume);
-     etPrenume = (EditText) findViewById(R.id.editTextPrenume);
-     etEmail = (EditText) findViewById(R.id.editTextEmail);
-     etUsername = (EditText) findViewById(R.id.editTextUsernameRegister);
-     etPassword = (EditText) findViewById(R.id.editTextPasswordRegister);
+     tvRegistered = findViewById(R.id.textViewRegister);
+     etNume = findViewById(R.id.editTextNume);
+     etPrenume = findViewById(R.id.editTextPrenume);
+     etEmail = findViewById(R.id.editTextEmail);
+     etUsername = findViewById(R.id.editTextUsernameRegister);
+     etPassword = findViewById(R.id.editTextPasswordRegister);
 
      strNume = etNume.getText().toString();
      strPrenume = etPrenume.getText().toString();
@@ -69,6 +53,7 @@ public void init(){
      strPassword = etPassword.getText().toString();
 }
 
+    @SuppressLint("SetTextI18n")
     private int inputValidation(){
         int a = 0;
         if(TextUtils.isEmpty(strNume)) {
@@ -101,16 +86,17 @@ public void init(){
         return a;
     }
 
+    @SuppressLint("SetTextI18n")
     private void checkInput(){
         if(inputValidation()==0){
-            if(!databaseHelper.checkUser(etUsername.getText().toString().trim(), etEmail.getText().toString().trim())){
+            if(!databaseHelper.checkUser(etUsername.getText().toString().trim(), etEmail.getText().toString().trim()))  {
 
                 user.setNume(etNume.getText().toString().trim());
                 user.setPrenume(etPrenume.getText().toString().trim());
                 user.setEmail(etEmail.getText().toString().trim());
                 user.setUsername(etUsername.getText().toString().trim());
                 user.setPassword(etPassword.getText().toString().trim());
-                CheckBox chk = (CheckBox) findViewById(R.id.checkBox);
+                CheckBox chk = findViewById(R.id.checkBox);
                 if(chk.isChecked()){
 
                     user.setDoctor(1);
@@ -137,7 +123,7 @@ public void init(){
             }
         else if (inputValidation()==1){
             tvRegistered.setTextColor(0xffa61f16);
-            tvRegistered.setText("Completati toate campurile.");
+            tvRegistered.setText("Completati tot campurile.");
         }
     }
     public void emptyFields(){

@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.ResultSet;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "UserManager.db";
@@ -96,5 +98,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         System.out.println("Check login");
         return cursorCount > 0;
+    }
+
+    public boolean isDoctor(String username, String password){
+        System.out.println("AAAAAA");
+        String[] columns = { COLUMN_USER_DOCTOR };
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = COLUMN_USER_USERNAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
+        String[] selectionArgs = { username, password };
+        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
+                columns,
+                selection,                      //where
+                selectionArgs,                  //valori pt where
+                null,
+                null,
+                null);
+
+        int isDoc = 0;
+        if(cursor.moveToFirst() && cursor.getCount() >= 1){
+            final int docIndex = cursor.getColumnIndex(COLUMN_USER_DOCTOR);
+            isDoc = cursor.getInt(docIndex);
+                if(isDoc == 1){
+                    System.out.println("doctor");
+                }
+        }
+           if(isDoc == 0){
+               System.out.println("nu e doctor");
+               return false;
+           }
+        cursor.close();
+        db.close();
+        return true;
     }
 }

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_account_details.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_add_drugs.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_doctor.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_list_drugs.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_list_patients.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_main.xml" value="0.20997920997921" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_order_drugs.xml" value="0.2151268115942029" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_register.xml" value="0.209375" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/activity_user.xml" value="0.25" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/back_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/custom_logo.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/fragment_doctor.xml" value="0.1" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/fragment_user.xml" value="0.1281661600810537" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/layout/user_toolbar.xml" value="0.25" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/menu/menu_admin.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/menu/menu_doctor.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/menu/menu_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Sebi/AndroidStudioProjects/proiectapl/app/src/main/res/menu/menu_user.xml" value="0.18541666666666667" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
