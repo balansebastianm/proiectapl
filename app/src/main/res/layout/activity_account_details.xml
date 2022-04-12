@@ -17,37 +17,38 @@
         android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/include3"
-        tools:layout_editor_absoluteX="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/textView20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username: " />
+            android:text="@string/username_c" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prenume: " />
+            android:text="@string/first_name_c" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email: " />
+            android:text="@string/email_c" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID user: " />
+            android:text="@string/user_id_c" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nume: " />
+            android:text="@string/last_name_c" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,34 +61,34 @@
         app:layout_constraintTop_toBottomOf="@+id/include3">
 
         <TextView
-            android:id="@+id/tvusername"
+            android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
 
         <TextView
-            android:id="@+id/tvprenume"
+            android:id="@+id/tvFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
 
         <TextView
-            android:id="@+id/tvemail"
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
 
         <TextView
-            android:id="@+id/tvid"
+            android:id="@+id/tvID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
 
         <TextView
-            android:id="@+id/tvnume"
+            android:id="@+id/tvLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

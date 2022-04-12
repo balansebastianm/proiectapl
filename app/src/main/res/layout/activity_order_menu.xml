@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuUser.orderMenu">
+    tools:context=".ui.activities.menu_user.orderMenu">
 
     <include
         android:id="@+id/include4"
@@ -25,88 +25,98 @@
             android:id="@+id/textView27"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nume complet" />
+            android:text="@string/full_name" />
 
         <EditText
-            android:id="@+id/etNumePrenumeComanda"
+            android:id="@+id/etFullNameOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView28"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Adresa" />
+            android:text="@string/address_c" />
 
         <EditText
-            android:id="@+id/etAdresaComanda"
+            android:id="@+id/etOrderAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView29"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cod postal" />
+            android:text="@string/po_code_c" />
 
         <EditText
-            android:id="@+id/etCodPostalComanda"
+            android:id="@+id/etPOCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Oras" />
+            android:text="@string/city_c" />
 
         <EditText
-            android:id="@+id/etOrasComanda"
+            android:id="@+id/etOrderCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView31"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Judet" />
+            android:text="@string/county_c" />
 
         <EditText
-            android:id="@+id/etJudetComanda"
+            android:id="@+id/etOrderCounty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView32"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pretul total: " />
+            android:text="@string/total_price" />
 
         <TextView
-            android:id="@+id/tvPretTotal"
+            android:id="@+id/tvTotalPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />
 
         <Button
-            android:id="@+id/buttonComanda"
+            android:id="@+id/buttonOrderNow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comanda acum" />
+            android:text="@string/order" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

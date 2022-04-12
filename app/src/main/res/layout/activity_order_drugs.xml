@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuUser.orderDrugs">
+    tools:context=".ui.activities.menu_user.orderDrugs">
 
     <include
         android:id="@+id/include5"
         layout="@layout/back_toolbar"
-        app:layout_constraintBottom_toTopOf="@+id/lvRetete"
+        app:layout_constraintBottom_toTopOf="@+id/lvPrescriptions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ListView
-        android:id="@+id/lvRetete"
+        android:id="@+id/lvPrescriptions"
         android:layout_width="413dp"
         android:layout_height="619dp"
         app:layout_constraintTop_toBottomOf="@+id/include5"
@@ -37,6 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="@string/list_order" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

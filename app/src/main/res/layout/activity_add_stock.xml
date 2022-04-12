@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuDoctor.addStock">
+    tools:context=".ui.activities.menu_doctor.addStock">
     <include
         android:id="@+id/include2"
-        layout="@layout/back_toolbar"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout" />
+        layout="@layout/back_toolbar" />
 
     <LinearLayout
         android:layout_width="409dp"
@@ -16,7 +15,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
 
 
         <Space
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:text="ID Medicament" />
+            android:text="@string/drug_id" />
 
         <EditText
             android:id="@+id/drugIdToChange"
@@ -36,7 +36,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor" />
 
 
         <TextView
@@ -45,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginBottom="8dp"
-            android:text="Stoc nou" />
+            android:text="@string/new_stock_value" />
 
         <EditText
             android:id="@+id/stockValueNew"
@@ -53,17 +55,19 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor"  />
 
         <Button
             android:id="@+id/buttonAddStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Add stock" />
+            android:text="@string/add_stock" />
 
         <TextView
-            android:id="@+id/tvEroareAddStock"
+            android:id="@+id/tvErrorAddStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />

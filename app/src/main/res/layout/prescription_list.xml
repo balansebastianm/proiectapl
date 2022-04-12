@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="12dp"
-    android:paddingBottom="12dp">
+    android:paddingStart="12dp"
+    android:paddingBottom="12dp"
+    tools:ignore="RtlSymmetry">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/drug_name"
-        android:text="Name"
+        android:id="@+id/drug_name2"
+        android:text="@string/name"
         android:textSize="32sp"/>
 
     <LinearLayout
@@ -24,16 +24,16 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Stoc: " />
+            android:text="@string/total" />
 
         <TextView
-            android:id="@+id/drug_stock"
+            android:id="@+id/drug_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stoc"
+            android:text=""
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -45,17 +45,38 @@
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Pret: " />
+            android:text="@string/price" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pret"
+            android:text=""
             android:textSize="18sp"
-            android:id="@+id/drug_price"/>
+            android:id="@+id/drug_price2"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/frequency" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:id="@+id/drug_fr"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,6 +87,5 @@
             android:visibility="invisible"/>
 
     </LinearLayout>
-
 
 </LinearLayout>

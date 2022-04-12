@@ -16,31 +16,32 @@
         android:layout_height="618dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/buttonComandaMedicamentePacient"
+            android:id="@+id/buttonOrderDrugsPatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comanda medicamente" />
+            android:text="@string/order_drugs" />
 
         <Button
-            android:id="@+id/buttonDetaliiContUser"
+            android:id="@+id/buttonAccountDetailsPatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="detalii cont" />
+            android:text="@string/account_details" />
 
         <Button
-            android:id="@+id/buttonIstoricComenziUser"
+            android:id="@+id/buttonOrderHistoryPatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="istoric comenzi" />
+            android:text="@string/order_history" />
 
         <Button
-            android:id="@+id/buttonLogOutUser"
+            android:id="@+id/buttonLogOutPatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log out" />
+            android:text="@string/log_out" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

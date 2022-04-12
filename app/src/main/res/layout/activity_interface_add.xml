@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuDoctor.interfaceAdd">
+    tools:context=".ui.activities.menu_doctor.interfaceAdd">
     <include
         android:id="@+id/include2"
         layout="@layout/back_toolbar"
@@ -26,77 +26,85 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nume medicament" />
+            android:text="@string/drug_name" />
 
         <EditText
-            android:id="@+id/textNumeMedicamentNou"
+            android:id="@+id/etNewDrugName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Descriere medicament" />
+            android:text="@string/drug_description" />
 
         <EditText
-            android:id="@+id/textDescriereMedicamentNou"
+            android:id="@+id/etNewDrugDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cod medicament" />
+            android:text="@string/drug_code" />
 
         <EditText
-            android:id="@+id/textCodMedicamentNou"
+            android:id="@+id/etNewDrugCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stoc medicament" />
+            android:text="@string/drug_stock" />
 
         <EditText
-            android:id="@+id/textStocMedicamentNou"
+            android:id="@+id/etNewDrugStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor"  />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pret medicament" />
+            android:text="@string/drug_price" />
 
         <EditText
-            android:id="@+id/textPretMedicamentNou"
+            android:id="@+id/etNewDrugPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-
-            />
+            android:importantForAutofill="no"
+            tools:ignore="Autofill,LabelFor" />
 
         <Button
             android:id="@+id/buttonAddDrug"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/adauga" />
+            android:text="@string/add" />
 
         <TextView
-            android:id="@+id/tvEroareAddDrugs"
+            android:id="@+id/tvNewDrugError"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />

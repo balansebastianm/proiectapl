@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,23 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button registerButton = (Button)findViewById(R.id.buttonRegisterLogin);
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                System.out.println("Button pressed");
-                Intent activity2Intent = new Intent(getApplicationContext(), registerActivity.class);
-                activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(activity2Intent);
-            }
+        registerButton.setOnClickListener(view -> {
+            System.out.println("Button pressed");
+            Intent activity2Intent = new Intent(getApplicationContext(), registerActivity.class);
+            activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(activity2Intent);
         });
         Button loginButton = (Button)findViewById(R.id.buttonLogin);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkInput();
-            }
-        });
+        loginButton.setOnClickListener(view -> checkInput());
     }
+    @SuppressLint("SetTextI18n")
     public void checkInput(){
         boolean invalid = false;
         EditText etUsername = (EditText) findViewById(R.id.editTextUsernameLogin);
@@ -67,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if(!invalid){
 
             if(databaseHelperUser.checkUserLogin(etUsername.getText().toString().trim(), etPassword.getText().toString().trim())){
-                System.out.println("SUCCES");
+                System.out.println("SUCCESS");
                 if(databaseHelperUser.isDoctor(etUsername.getText().toString().trim(), etPassword.getText().toString().trim())){
                     Intent activity2Intent = new Intent(getApplicationContext(), doctorActivity.class);
                     activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -80,12 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             else{
-                System.out.println("Erorare");
+                System.out.println("Error");
                 TextView tvl = (TextView) findViewById(R.id.textViewLogin);
                 tvl.setTextColor(0xffa61f16);
-                tvl.setText("Username sau parola gresite.");
+                tvl.setText("Wrong username or password.");
         }
-            invalid = false;
         }
     }
 
@@ -94,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         int permissionRead = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
         int permissionWrite = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if(permissionRead != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS, 1);
+        }
+        if(permissionWrite != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS, 1);
         }
     }

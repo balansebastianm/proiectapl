@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="12dp"
-    android:paddingBottom="12dp">
+    android:paddingStart="12dp"
+    android:paddingBottom="12dp"
+    tools:ignore="RtlSymmetry">
 
 
 
@@ -12,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/person_name"
-        android:text="Name"
+        android:text="@string/name"
         android:textSize="32sp"/>
 
     <LinearLayout
@@ -22,16 +24,16 @@
 
         <TextView
             android:id="@+id/textView17"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Adresa: " />
+            android:text="@string/address" />
 
         <TextView
-            android:id="@+id/adresa_comanda"
+            android:id="@+id/order_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="adr"
+            android:text=""
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -43,17 +45,17 @@
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cod postal: " />
+            android:text="@string/po_code" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cp"
+            android:text=""
             android:textSize="18sp"
-            android:id="@+id/cod_postal_comanda"/>
+            android:id="@+id/order_POCode"/>
 
 
     </LinearLayout>
@@ -64,24 +66,24 @@
 
         <TextView
             android:id="@+id/textView19"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Oras: " />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="oras"
-            android:textSize="18sp"
-            android:id="@+id/oras_comanda"/>
+            android:text="@string/city" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="18sp"
-            android:id="@+id/comanda_id"
+            android:id="@+id/order_city"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:id="@+id/order_id"
             android:visibility="invisible"/>
 
     </LinearLayout>
@@ -92,17 +94,17 @@
 
         <TextView
             android:id="@+id/textView20"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Judet: " />
+            android:text="@string/county" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="jud"
+            android:text=""
             android:textSize="18sp"
-            android:id="@+id/judet_comanda"/>
+            android:id="@+id/order_county"/>
 
 
     </LinearLayout>
@@ -113,17 +115,17 @@
 
         <TextView
             android:id="@+id/textView21"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Pret total: " />
+            android:text="@string/price" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pret"
+            android:text=""
             android:textSize="18sp"
-            android:id="@+id/pret_comanda"/>
+            android:id="@+id/order_price"/>
 
 
     </LinearLayout>

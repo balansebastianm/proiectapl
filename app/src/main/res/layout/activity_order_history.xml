@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuUser.istoricComenzi">
+    tools:context=".ui.activities.menu_user.orderHistory">
     <include
         android:id="@+id/include2"
         layout="@layout/back_toolbar"
@@ -17,5 +17,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2"
         tools:layout_editor_absoluteX="-2dp"
-        android:id="@+id/lvIstoric"/>
+        android:id="@+id/lvHistory"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

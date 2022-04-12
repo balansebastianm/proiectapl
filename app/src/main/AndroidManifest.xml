@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.proiect">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -13,31 +15,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proiect">
         <activity
-            android:name=".ui.activities.meniuUser.istoricComenzi"
+            android:name=".ui.activities.menu_user.orderHistory"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuUser.orderMenu"
+            android:name=".ui.activities.menu_user.orderMenu"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuDoctor.retetaNoua"
+            android:name=".ui.activities.menu_doctor.newPrescription"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuDoctor.addPatient"
+            android:name=".ui.activities.menu_doctor.addPatient"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuDoctor.addStock"
+            android:name=".ui.activities.menu_doctor.addStock"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuDoctor.interfaceAdd"
+            android:name=".ui.activities.menu_doctor.interfaceAdd"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuUser.orderDrugs"
+            android:name=".ui.activities.menu_user.orderDrugs"
             android:exported="false" />
         <activity
             android:name=".ui.activities.accountDetails"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.meniuDoctor.addDrugs"
+            android:name=".ui.activities.menu_doctor.addDrugs"
             android:exported="false" />
         <activity
             android:name=".ui.activities.doctorActivity"
@@ -45,10 +47,6 @@
         <activity
             android:name=".ui.activities.userActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
         <activity
             android:name=".ui.activities.registerActivity"
             android:exported="false" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.meniuDoctor.retetaNoua">
+    tools:context=".ui.activities.menu_doctor.newPrescription">
 
     <include
         android:id="@+id/include4"
@@ -24,63 +24,71 @@
             android:id="@+id/textView23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ID User" />
+            android:text="@string/user_id" />
 
         <EditText
-            android:id="@+id/etUserReteta"
+            android:id="@+id/etUserPrescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            tools:ignore="LabelFor"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List cu ID medicamente (separate prin virgula)" />
+            android:text="@string/list_drugsid_separated_by_commas" />
 
         <EditText
-            android:id="@+id/etIdMedicamente"
+            android:id="@+id/etDrugsId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
 
         <TextView
             android:id="@+id/textView25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lista cu nr medicamente, in aceeasi ordine (separate prin virgula)" />
+            android:text="@string/no_of_boxes_same_order_separated_by_commas" />
 
         <EditText
-            android:id="@+id/etNrMedicamente"
+            android:id="@+id/etDrugsNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields"/>
 
         <TextView
             android:id="@+id/textView26"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Frecventa, in aceeasi ordine (separate prin virgula)" />
+            android:text="@string/frequency_same_order_separated_by_commas" />
 
         <EditText
-            android:id="@+id/etFrecventaMedicamente"
+            android:id="@+id/etDrugsFrequency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor,TextFields"/>
 
         <Button
-            android:id="@+id/buttonTrimiteReteta"
+            android:id="@+id/buttonSendPrescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trimite reteta" />
+            android:text="@string/send_prescription" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

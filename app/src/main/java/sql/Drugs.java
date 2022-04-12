@@ -2,21 +2,11 @@ package sql;
 
 public class Drugs {
     int id;
-    String nume;
-    String descriere;
-    String cod;
+    String name;
+    String description;
+    String code;
     int price;
-    int stoc;
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-
+    int stock;
 
     public int getId() {
         return id;
@@ -26,36 +16,43 @@ public class Drugs {
         this.id = id;
     }
 
-    public String getNume() {
-        return nume;
+    public String getName() {
+        return name;
     }
 
-    public void setNume(String nume) {
-        this.nume = nume;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescriere() {
-        return descriere;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriere(String descriere) {
-        this.descriere = descriere;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCod() {
-        return cod;
+    public String getCode() {
+        return code;
     }
 
-    public void setCod(String cod) {
-        this.cod = cod;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public int getStoc() {
-        return stoc;
+    public int getPrice() {
+        return price;
     }
 
-    public void setStoc(int stoc) {
-        this.stoc = stoc;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }

@@ -10,6 +10,6 @@
         android:id="@+id/backArrowToolbar"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        />
+        android:contentDescription="@string/go_back" />
 
 </RelativeLayout>

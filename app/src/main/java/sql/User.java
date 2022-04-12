@@ -2,8 +2,8 @@ package sql;
 
 public class User {
     int id;
-    String nume;
-    String prenume;
+    String last_name;
+    String first_name;
     String email;
     String username;
     String password;
@@ -34,20 +34,20 @@ public class User {
         this.id = id;
     }
 
-    public String getNume() {
-        return nume;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setNume(String nume) {
-        this.nume = nume;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public String getPrenume() {
-        return prenume;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setPrenume(String prenume) {
-        this.prenume = prenume;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getEmail() {

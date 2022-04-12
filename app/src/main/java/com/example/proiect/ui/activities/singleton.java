@@ -15,8 +15,8 @@ public class singleton {
 
     private String id;
     private String username;
-    private String nume;
-    private String prenume;
+    private String last_name;
+    private String first_name;
     private String email;
     private String isDoctor;
     public String getIsDoctor() {
@@ -26,8 +26,6 @@ public class singleton {
     public void setIsDoctor(String isDoctor) {
         this.isDoctor = isDoctor;
     }
-
-
 
     public String getId() {
         return id;
@@ -45,20 +43,20 @@ public class singleton {
         this.username = username;
     }
 
-    public String getNume() {
-        return nume;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setNume(String nume) {
-        this.nume = nume;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public String getPrenume() {
-        return prenume;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setPrenume(String prenume) {
-        this.prenume = prenume;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
     public String getEmail() {

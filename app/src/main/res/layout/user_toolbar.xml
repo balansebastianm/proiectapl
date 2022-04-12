@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/holo_blue_light">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
         <TextView
-            android:id="@+id/tvvvv"
+            android:id="@+id/tvWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bun venit!"
+            android:text="Welcome!"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            />
+            android:layout_marginStart="5dp"
+            tools:ignore="HardcodedText" />
 
 
         <ImageView
@@ -26,9 +28,9 @@
 
             android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_baseline_message_24" />
+            android:src="@drawable/ic_baseline_message_24"
+            android:contentDescription="@string/chat" />
 
 
     </RelativeLayout>

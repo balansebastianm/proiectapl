@@ -6,47 +6,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.TextView;
-
 import com.example.proiect.ui.activities.singleton;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
-import java.nio.file.Files;
-import java.nio.file.StandardOpenOption;
-import java.sql.ResultSet;
 
 public class DatabaseHelperUser extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "UserManager.db";
     private static final String TABLE_USER = "user";
     private static final String COLUMN_USER_ID = "_id";
-    private static final String COLUMN_USER_NUME = "user_nume";
-    private static final String COLUMN_USER_PRENUME = "user_prename";
+    private static final String COLUMN_USER_LAST_NAME = "user_last_name";
+    private static final String COLUMN_USER_FIRST_NAME = "user_first_name";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_USERNAME = "user_username";
     private static final String COLUMN_USER_PASSWORD = "user_password";
     private static final String  COLUMN_USER_DOCTOR = "user_doctor";
     private static final String COLUMN_USER_ASSIGNED_DOCTOR = "user_assigned_doctor";
-    private String CREATE_USER_TABLE =
-            "CREATE TABLE " + TABLE_USER + "("
-            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + COLUMN_USER_NUME + " TEXT,"
-            + COLUMN_USER_PRENUME + " TEXT,"
-            + COLUMN_USER_EMAIL + " TEXT,"
-            + COLUMN_USER_USERNAME  + " TEXT,"
-            + COLUMN_USER_DOCTOR  + " INTEGER,"
-            + COLUMN_USER_PASSWORD + " TEXT,"
-            + COLUMN_USER_ASSIGNED_DOCTOR + " INTEGER"
-            + ")";
-
-    private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
 
     public DatabaseHelperUser(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -54,11 +27,22 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
+        String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
+                + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + COLUMN_USER_LAST_NAME + " TEXT,"
+                + COLUMN_USER_FIRST_NAME + " TEXT,"
+                + COLUMN_USER_EMAIL + " TEXT,"
+                + COLUMN_USER_USERNAME + " TEXT,"
+                + COLUMN_USER_DOCTOR + " INTEGER,"
+                + COLUMN_USER_PASSWORD + " TEXT,"
+                + COLUMN_USER_ASSIGNED_DOCTOR + " INTEGER"
+                + ")";
         db.execSQL(CREATE_USER_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
         db.execSQL(DROP_USER_TABLE);
         onCreate(db);
     }
@@ -67,8 +51,8 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(COLUMN_USER_NUME, user.getNume());
-        values.put(COLUMN_USER_PRENUME, user.getPrenume());
+        values.put(COLUMN_USER_LAST_NAME, user.getLast_name());
+        values.put(COLUMN_USER_FIRST_NAME, user.getFirst_name());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_USERNAME, user.getUsername());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
@@ -84,10 +68,10 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = COLUMN_USER_USERNAME + " = ?" + " OR " + COLUMN_USER_EMAIL + " = ?";
         String[] selectionArgs = { username, email };
-        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
-                columns,                        //coloanele returnate
-                selection,                      //where
-                selectionArgs,                  //valori pt where
+        Cursor cursor = db.query(TABLE_USER,
+                columns,
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null);
@@ -98,14 +82,14 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         return cursorCount > 0;
     }
     public boolean checkUserLogin(String username, String password){
-        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_NUME, COLUMN_USER_PRENUME, COLUMN_USER_EMAIL, COLUMN_USER_DOCTOR };
+        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_LAST_NAME, COLUMN_USER_FIRST_NAME, COLUMN_USER_EMAIL, COLUMN_USER_DOCTOR };
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = COLUMN_USER_USERNAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
         String[] selectionArgs = { username, password };
-        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
+        Cursor cursor = db.query(TABLE_USER,
                 columns,
-                selection,                      //where
-                selectionArgs,                  //valori pt where
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null);
@@ -122,24 +106,24 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
 
     @SuppressLint("Range")
     public void writeToFile(Cursor cursor){
-        String id, username, nume, prenume, email, isDoctor;
+        String id, username, last_name, first_name, email, isDoctor;
         cursor.moveToFirst();
         id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID));
         username = cursor.getString(cursor.getColumnIndex(COLUMN_USER_USERNAME));
-        nume = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NUME));
-        prenume = cursor.getString(cursor.getColumnIndex(COLUMN_USER_PRENUME));
+        last_name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_LAST_NAME));
+        first_name = cursor.getString(cursor.getColumnIndex(COLUMN_USER_FIRST_NAME));
         email = cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL));
         isDoctor = cursor.getString(cursor.getColumnIndex(COLUMN_USER_DOCTOR));
         System.out.println("id: " + id);
-        System.out.println("Nume: " + nume);
-        System.out.println("Prenume: " + prenume);
+        System.out.println("Nume: " + last_name);
+        System.out.println("Prenume: " + first_name);
         System.out.println("username: " + username);
         System.out.println("email: " + email);
         System.out.println("isDoctor: " + isDoctor);
         singleton.getInstance().setId(id);
         singleton.getInstance().setUsername(username);
-        singleton.getInstance().setNume(nume);
-        singleton.getInstance().setPrenume(prenume);
+        singleton.getInstance().setLast_name(last_name);
+        singleton.getInstance().setFirst_name(first_name);
         singleton.getInstance().setEmail(email);
         singleton.getInstance().setIsDoctor(isDoctor);
     }
@@ -150,10 +134,10 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = COLUMN_USER_USERNAME + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
         String[] selectionArgs = { username, password };
-        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
+        Cursor cursor = db.query(TABLE_USER,
                 columns,
-                selection,                      //where
-                selectionArgs,                  //valori pt where
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null);
@@ -174,18 +158,17 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         db.close();
         return true;
     }
-    public boolean checkIfHasDoctor(int idUser, int idDoctor){
-        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_NUME, COLUMN_USER_PRENUME, COLUMN_USER_EMAIL };
+    public boolean checkIfHasDoctor(int idUser){
+        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_LAST_NAME, COLUMN_USER_FIRST_NAME, COLUMN_USER_EMAIL };
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = COLUMN_USER_ID + " = ?" + " AND " + COLUMN_USER_ASSIGNED_DOCTOR + " !=0";
-        String idu, idd;
+        String idu;
         idu = Integer.toString(idUser);
-        idd = Integer.toString(idDoctor);
         String[] selectionArgs = { idu };
-        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
+        Cursor cursor = db.query(TABLE_USER,
                 columns,
-                selection,                      //where
-                selectionArgs,                  //valori pt where
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null);
@@ -196,17 +179,17 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
     }
 
     public boolean checkAssignedDoctor(int idUser, int idDoctor){
-        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_NUME, COLUMN_USER_PRENUME, COLUMN_USER_EMAIL };
+        String[] columns = { COLUMN_USER_ID, COLUMN_USER_USERNAME, COLUMN_USER_LAST_NAME, COLUMN_USER_FIRST_NAME, COLUMN_USER_EMAIL };
         SQLiteDatabase db = this.getReadableDatabase();
         String selection = COLUMN_USER_ID + " = ?" + " AND " + COLUMN_USER_ASSIGNED_DOCTOR + " = ?";
         String idu, idd;
         idu = Integer.toString(idUser);
         idd = Integer.toString(idDoctor);
         String[] selectionArgs = { idu, idd };
-        Cursor cursor = db.query(TABLE_USER,    //Tabel pt query
+        Cursor cursor = db.query(TABLE_USER,
                 columns,
-                selection,                      //where
-                selectionArgs,                  //valori pt where
+                selection,
+                selectionArgs,
                 null,
                 null,
                 null);
@@ -218,7 +201,7 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
     public boolean assignDoctor(int idUser, int idDoctor){
         SQLiteDatabase db = this.getWritableDatabase();
         try{
-            Cursor cursor = null;
+            Cursor cursor;
             String sql ="SELECT _id FROM "+TABLE_USER+" WHERE _id="+idUser;
             cursor= db.rawQuery(sql,null);
 

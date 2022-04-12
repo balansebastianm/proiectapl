@@ -16,37 +16,38 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include6"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/buttonAdaugaMedicamenteDoctor"
+            android:id="@+id/buttonAddDrugsDoctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="adauga medicamente" />
+            android:text="@string/add_drugs" />
 
         <Button
-            android:id="@+id/buttonAdaugaPacientDoctor"
+            android:id="@+id/buttonAddPatientDoctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="adauga pacient" />
+            android:text="@string/add_patient" />
 
         <Button
-            android:id="@+id/buttonTrimiteRetetaDoctor"
+            android:id="@+id/buttonSendPrescriptionDoctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="trimite reteta" />
+            android:text="@string/send_prescription_c" />
 
         <Button
-            android:id="@+id/buttonDetaliiContDoctor"
+            android:id="@+id/buttonAccountDetailsDoctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="detalii cont" />
+            android:text="@string/account_details" />
 
         <Button
             android:id="@+id/LogOutDoctor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log out" />
+            android:text="@string/log_out" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

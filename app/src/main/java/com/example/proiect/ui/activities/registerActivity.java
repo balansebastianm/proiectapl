@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -22,8 +21,8 @@ import sql.User;
 public class registerActivity extends AppCompatActivity {
     User user = new User();
     TextView tvRegistered;
-    String strUsername, strPassword,  strEmail, strPrenume,  strNume;
-    EditText etNume, etPrenume, etEmail, etUsername, etPassword;
+    String strUsername, strPassword,  strEmail, strFirstName,  strLastName;
+    EditText etLastName, etFirstName, etEmail, etUsername, etPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +30,10 @@ public class registerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         ImageView back = findViewById(R.id.backArrowToolbar);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent activity2Intent = new Intent(getApplicationContext(), userActivity.class);
-                activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(activity2Intent);
-            }
+        back.setOnClickListener(view -> {
+            Intent activity2Intent = new Intent(getApplicationContext(), userActivity.class);
+            activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(activity2Intent);
         });
 
         Button register = findViewById(R.id.buttonRegisterRegister);
@@ -53,14 +49,14 @@ public class registerActivity extends AppCompatActivity {
 
 public void init(){
      tvRegistered = findViewById(R.id.textViewRegister);
-     etNume = findViewById(R.id.editTextNume);
-     etPrenume = findViewById(R.id.editTextPrenume);
+     etLastName = findViewById(R.id.editTextLastName);
+    etFirstName = findViewById(R.id.editTextFirstName);
      etEmail = findViewById(R.id.editTextEmail);
      etUsername = findViewById(R.id.editTextUsernameRegister);
      etPassword = findViewById(R.id.editTextPasswordRegister);
 
-     strNume = etNume.getText().toString();
-     strPrenume = etPrenume.getText().toString();
+     strLastName = etLastName.getText().toString();
+     strFirstName = etFirstName.getText().toString();
      strEmail = etEmail.getText().toString();
      strUsername = etUsername.getText().toString();
      strPassword = etPassword.getText().toString();
@@ -69,12 +65,12 @@ public void init(){
     @SuppressLint("SetTextI18n")
     private int inputValidation(){
         int a = 0;
-        if(TextUtils.isEmpty(strNume)) {
-            etNume.setError("Empty field");
+        if(TextUtils.isEmpty(strLastName)) {
+            etLastName.setError("Empty field");
             a = 1;
         }
-        if(TextUtils.isEmpty(strPrenume)) {
-            etPrenume.setError("Empty field");
+        if(TextUtils.isEmpty(strFirstName)) {
+            etFirstName.setError("Empty field");
             a = 1;
         }
         if(TextUtils.isEmpty(strEmail)) {
@@ -104,8 +100,8 @@ public void init(){
         if(inputValidation()==0){
             if(!databaseHelperUser.checkUser(etUsername.getText().toString().trim(), etEmail.getText().toString().trim()))  {
 
-                user.setNume(etNume.getText().toString().trim());
-                user.setPrenume(etPrenume.getText().toString().trim());
+                user.setLast_name(etLastName.getText().toString().trim());
+                user.setFirst_name(etFirstName.getText().toString().trim());
                 user.setEmail(etEmail.getText().toString().trim());
                 user.setUsername(etUsername.getText().toString().trim());
                 user.setPassword(etPassword.getText().toString().trim());
@@ -122,9 +118,9 @@ public void init(){
 
 
 
-                System.out.println("Cont creat");
+                System.out.println("Account created");
                 tvRegistered.setTextColor(0xFF3700B3);
-                tvRegistered.setText("Contul a fost creat cu succes.");
+                tvRegistered.setText("Account created successfully.");
                 Intent activity2Intent = new Intent(getApplicationContext(), MainActivity.class);
                 activity2Intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(activity2Intent);
@@ -132,19 +128,19 @@ public void init(){
             }else{
                 System.out.println("Email + username");
                 tvRegistered.setTextColor(0xffa61f16);
-                tvRegistered.setText("Email sau username existent.");
+                tvRegistered.setText("Email or username already exists.");
 
             }
 
             }
         else if (inputValidation()==1){
             tvRegistered.setTextColor(0xffa61f16);
-            tvRegistered.setText("Completati tot campurile.");
+            tvRegistered.setText("Fill in all fields.");
         }
     }
     public void emptyFields(){
-        etNume.setText(null);
-        etPrenume.setText(null);
+        etLastName.setText(null);
+        etFirstName.setText(null);
         etEmail.setText(null);
         etUsername.setText(null);
         etPassword.setText(null);
